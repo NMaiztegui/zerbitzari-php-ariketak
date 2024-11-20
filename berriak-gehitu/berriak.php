@@ -17,6 +17,8 @@
             }
             
             echo 'los campos obligatorios han sido rellenados<br>';
+
+            echo'<ul><li><p><strong>Izenburua</strong></p></li></ul>';
         }else{
               echo 'los campos izenburu y testua no han sido rellenados<br>';
         }
