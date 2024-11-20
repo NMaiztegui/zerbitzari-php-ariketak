@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>txanpon biurgailua</h1>
+    
+    <form action="berriak.php" method="post">
+        <label for="izenburu">Izenburua*:</label>
+        <input type="text" id="izenburu" name="izenburu" required  ><br>
+        
+        <label for="textua">Testua*:</label>
+
+        <textarea id="textua" name="textua" rows="5" required ></textarea><br>
+        <label for="kategoria">Mota:</label>
+        <select name="kategoria">
+            <option value="fisika" selected>fisika</option>
+            <option value="algebra">algebra</option>
+            <option value="historia">historia</option>
+            <option value="artea">artea</option>
+        </select><br>
+        <label for="image">Irudia:</label>
+        <input type="file" id="image" name="image" accept="image/*">
+       
+        <button type="submit">bidali</button>
+    </form>
+  
+    <p><strong>Nota:</strong> * karakterea duten atalek derrigorrez bete behar dira.</p>
+    
+    
+
+</body>
+</html>
