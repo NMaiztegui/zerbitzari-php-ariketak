@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -10,13 +9,14 @@ if (!isset($_SESSION['aukerak'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['option'])) {
-    $response = $_POST['option'];
-    if (isset($_SESSION['aukerak'][$response])) {
-        $_SESSION['aukerak'][$response]++;
+    $ernatzuna = $_POST['option'];
+    if (isset($_SESSION['aukerak'][$ernatzuna])) {
+        $_SESSION['aukerak'][$ernatzuna]++;
+        echo 'Zure erantzuna erregistratu da';
     }
 }
 
-$totalVotes = array_sum($_SESSION['aukerak']);
+$botoak = array_sum($_SESSION['aukerak']);
 ?>
 
 <!DOCTYPE html>
@@ -27,16 +27,13 @@ $totalVotes = array_sum($_SESSION['aukerak']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inkesta emaitzak</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
 </head>
 
 <body>
     <h1>Inkesta. Inkestaren emaitzak</h1>
     <div class="container">
-        <p>Zure erantzuna erregistratu dugu.</p>
-        <canvas id="resultsChart" width="400" height="400"></canvas>
-        <p>Jasotako bozken guztira: <?php echo $totalVotes; ?></p>
+        <canvas id="resultsChart" width="200" height="200"></canvas>
+        <p>Jasotako bozken guztira: <?php echo $botoak; ?></p>
         <p><a href="INKESTA-html.html">Bueltatu bozkatzeko orrira</a></p>
     </div>
     <script>
@@ -45,10 +42,10 @@ $totalVotes = array_sum($_SESSION['aukerak']);
             datasets: [{
                 label: 'Bozkak',
                 data: [
-                    <?php echo $_SESSION['responses']['Bai']; ?>,
-                    <?php echo $_SESSION['responses']['Ez']; ?>,
+                    <?php echo $_SESSION['aukerak']['Bai']; ?>,
+                    <?php echo $_SESSION['aukerak']['Ez']; ?>,
                 ],
-                backgroundColor: ['#4CAF50', '#F44336', '#FFC107']
+                backgroundColor: ['#4CAF50', '#F44336']
             }]
         };
 
