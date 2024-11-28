@@ -92,7 +92,7 @@
         $newhouse = new etxeak($mota,  $zonalde,$helbide,$logela,$prezio,$tamaina,$extra,$img,$oharra );
         
         
-        $querry=$newhouse->sartu_datuak();
+        $query=$newhouse->sartu_datuak();
         // si los adatos se han subido
         if ($mysqli->query($query) === TRUE) {
             echo "<p>¡Casa agregada correctamente!</p>";
@@ -205,7 +205,7 @@
         <label for="irudia">Irudia:</label>
         <input type="file" id="irudia" name="irudia" accept="image/jpeg, image/png">
         <label for="helbidea">Oharra:</label>
-        <input type="text" id="helbidea" name="helbidea" >
+        <input type="text" id="oharra" name="oharra" >
        
         <button type="submit">Erantzun</button>
     </form>
