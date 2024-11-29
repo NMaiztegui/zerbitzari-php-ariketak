@@ -60,6 +60,7 @@ $conexion->close();
  echo"Se han encontrado $numregistros casas";
 
 ?>
+
     <table>
         <thead>
             <tr>
@@ -91,6 +92,12 @@ $conexion->close();
             }else{
                 echo "<td>",$valor, "</td>";
             }
+            echo "<td>
+            <form method='POST' action='delete.php' style='display:inline;'>
+                <input type='hidden' name='id' value='{$registro['id']}'>
+                <button type='submit' onclick='return confirm(\"¿Estás seguro de que deseas eliminar esta casa?\");'>Eliminar</button>
+            </form>
+          </td>";
         
             echo "</tr>";
         }
